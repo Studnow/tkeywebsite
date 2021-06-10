@@ -1,0 +1,18 @@
+block variables
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{pageDesc}}">
+  <title>{{title}}</title>
+</head>
+
+body
+  #app.grid-footer-down.bg-dark.text-white.dark
+    header#header.app-header
+      block header
+    main#main.app-content.overflow-hidden
+      block content
+      block aside
+    footer#footer.app-footer.bg-foot.p-8
