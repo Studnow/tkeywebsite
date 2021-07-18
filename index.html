@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   {{>head title="Index page" pageDesc="home page description"}}
-  <body>
-    {{> header }} {{> content}}
-    <script type="module" src="/main.js"></script>
-    {{>footer}}
+  <body class="bg-dark-50">
+    <pug src="./src/templates/layout/header.pug"></pug>
+    <h2 class="">Partials on</h2>
+    <pug src="./src/templates/layout/content.pug"></pug>
+    <script type="module" src="/src/js/main.js"></script>
+    <pug src="./src/templates/layout/footer.pug"></pug>
   </body>
 </html>
