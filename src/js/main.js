@@ -1,4 +1,3 @@
-import './imports.js'
-import "../styles/about.css";
+import './fn.js'
 import "virtual:windi.css";
 import '../styles/style.css'

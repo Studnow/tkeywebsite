@@ -15,6 +15,9 @@ export default defineConfig({
         about: resolve(__dirname, "./pages/about.html"),
         some: resolve(__dirname, "./pages/some.html"),
       },
+      // output: {
+      //   entryFileNames: 'main.js'
+      // }
     },
   },
   plugins: [
