@@ -12,5 +12,6 @@
     "vite-plugin-pug": "^0.3.0",
     "vite-plugin-windicss": "^1.0.3",
     "windicss": "^3.5.4"
-  }
+  },
+  "dependencies": {}
 }
