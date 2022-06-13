@@ -5,3 +5,4 @@ if (hello) {
   <a href="/index.html">Home</a>
 `;
 }
+fetch("http://localhost:8000/wp-json/wp/v2/");
