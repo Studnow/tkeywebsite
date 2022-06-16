@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 import viteHandlebars from "vite-plugin-handlebars";
 import WindiCSS from "vite-plugin-windicss";
-import pugPlugin from 'vite-plugin-pug';
+// import pugPlugin from 'vite-plugin-pug';
 
 export default defineConfig({
   build: {
@@ -21,12 +21,13 @@ export default defineConfig({
     },
   },
   plugins: [
-    pugPlugin(),
+    // pugPlugin(),
     viteHandlebars({
       partialDirectory: [
-        resolve(__dirname, "src/templates/layout/hbs"),
-        // resolve(__dirname, "src/templates/components"),
-      ],
+        resolve(__dirname, "src/templates/layout"),
+        resolve(__dirname, "src/templates/components"),
+        resolve(__dirname, "src/templates/components/svg/sprites"),
+      ]
     }),
     WindiCSS(),
   ],

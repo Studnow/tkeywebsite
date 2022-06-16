@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-  {{>head title="Index page" pageDesc="home page description"}}
-  <body class="bg-dark-50">
-    <pug src="./src/templates/layout/header.pug"></pug>
-    <h2 class="">Partials on</h2>
-    <pug src="./src/templates/layout/content.pug"></pug>
-    <pug src="./src/templates/layout/footer.pug"></pug>
+<html lang="ru">
+  {{>head title="Сайт под ключ" pageDesc="Заказать сайт под ключ"}}
+  <body>
+    {{>menu-bar}}
+    <div id="app" class="m-0 flex flex-col min-h-screen">
+        {{>header}}
+        {{>main}}
+        {{>footer}}
+    </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

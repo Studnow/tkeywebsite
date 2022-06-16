@@ -1,0 +1,17 @@
+<nav class="md:hidden self-end" x-data="{open: false}">
+  <button aria-label="Показать меню" class="menu_button" @click="open = ! open">
+    <svg class="menu-icon transition" x-show="!open" x-transition:enter.delay.25ms>
+      <use xlink:href="#hamburger_round"></use>
+    </svg>
+    <svg class="menu-icon transition" x-show="open" x-transition:enter.delay.25ms>
+      <use xlink:href="#x_round"></use>
+    </svg>
+  </button>
+  <ul class="flex-col z-10 flex space-x-0 justify-center absolute right-0 bg-secondary mt-0" x-show="open" x-transition>
+    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/index.html">Home page</a></li>
+    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/pages/about.html">About</a></li>
+    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/pages/some.html">Smile</a></li>
+    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="#!">Contacts</a></li>
+    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="#!">Impacts</a></li>
+  </ul>
+</nav>

@@ -5,15 +5,15 @@ import typography from "windicss/plugin/typography";
 
 export default defineConfig({
   extract: {
-    include: [
-      'index.html',
-      'src/**/*.{html,pug,hbs}',
-      'pages/**/*.html'
-    ],
-    exclude: [
-      'node_modules/**/*',
-      '.git/**/*'
-    ]
+    include: ["index.html", "src/**/*.{html,pug,hbs}", "pages/**/*.html"],
+    exclude: ["node_modules/**/*", ".git/**/*"],
+  },
+  theme: {
+    colors: {
+      common: "#313131",
+      primary: "#49AD09",
+      secondary: "#F2F2F2",
+    },
   },
   plugins: [typography()],
 });

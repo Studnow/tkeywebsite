@@ -13,5 +13,7 @@
     "vite-plugin-windicss": "^1.0.3",
     "windicss": "^3.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "alpinejs": "^3.10.2"
+  }
 }

@@ -1,12 +1,32 @@
 @import url(./about.css);
 
 @font-face {
-  font-family: "Raleway", sans-serif;
-  src: url(/fonts/Raleway-Regular.ttf);
+  font-family: "Gilroy-Bold", sans-serif;
+  src: url(/fonts/Gilroy-Bold.woff);
 }
 @font-face {
-  font-family: "PlayfairDisplay", serif;
-  src: url(/fonts/PlayfairDisplay-Bold.ttf);
+  font-family: "Gilroy-Medium", sans-serif;
+  src: url(/fonts/Gilroy-Medium.woff);
+}
+@font-face {
+  font-family: "Gilroy-SemiBold", sans-serif;
+  src: url(/fonts/Gilroy-SemiBold.woff);
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(/fonts/inter-v11-latin_cyrillic-regular.woff2);
+}
+@font-face {
+  font-family: "Inter-m", sans-serif;
+  src: url(/fonts/inter-v11-latin_cyrillic-500.woff2);
+}
+@font-face {
+  font-family: "Inter-sb", sans-serif;
+  src: url(/fonts/inter-v11-latin_cyrillic-600.woff2);
+}
+@font-face {
+  font-family: "Inter-xb", sans-serif;
+  src: url(/fonts/inter-v11-latin_cyrillic-800.woff2);
 }
 
 html {
@@ -14,10 +34,13 @@ html {
 }
 
 body {
-  @apply font-text prose-xl;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body a {
-  @apply text-yellow-600;
+
+*::selection {
+  @apply bg-primary text-secondary;
 }
 body h1 {
   @apply text-green-500;
@@ -27,17 +50,54 @@ body h2 {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  margin-bottom: 5rem;
+  font-family: Gilroy, sans-serif;
 }
-#raw {
-  margin: 0 auto;
-  text-align: center;
-  min-height: 100vh;
-  background-image: url(/img/first-bg-min.png);
+.menu_button {
+  @apply lg:hidden;
+}
+.menu-icon {
+  @apply w-10 h-10;
+}
+.hero {
+  @apply flex justify-between items-center h-screen-md bg-secondary px-4;
+}
+.hero_text {
+  font-family: Inter, sans-serif;
+  @apply font-extrabold flex flex-col items-center;
+}
+.hero_left-img .hero_right-img {
+  @apply w-1/3 h-screen-md;
+}
+.hero_right-img {
+  @apply ;
+}
+.decor {
+  @apply hidden lg:block;
+}
+.screen {
+  @apply h-screen flex flex-col items-center;
+}
+.screen_header {
+  @apply text-center mt-16;
+}
+.screen_cards {
+  @apply mt-8 w-screen-lg grid grid-cols-2 grid-rows-2 justify-items-center gap-8;
+}
+.screen_cards__card {
+  @apply p-8 font-base border border-secondary rounded-lg hover:shadow-2xl transition flex flex-col;
+}
+.screen_cards__card-header {
+  @apply prose-xl flex gap-4 items-center;
+}
+.screen_cards__card-text {
+  @apply my-6;
+}
+.screen_cards__card-link {
+  @apply text-base hover:text-primary hover:underline;
+}
+.btn {
+  @apply bg-primary hover:bg-secondary hover:text-primary transition duration-200 hover:border-primary text-secondary font-semibold px-6 py-3 border-3 border-primary hover:border-3 rounded-lg mt-8;
+}
+.portfolio_header {
+  @apply justify-between gap-16;
 }
