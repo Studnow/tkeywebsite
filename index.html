@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
   {{>head title="Сайт под ключ" pageDesc="Заказать сайт под ключ"}}
-  <body>
-    {{>menu-bar}}
-    <div id="app" class="m-0 flex flex-col min-h-screen">
-        {{>header}}
-        {{>main}}
-        {{>footer}}
-    </div>
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+  {{>body scriptBottom="/src/js/main.js"}}
 </html>
