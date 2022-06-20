@@ -13,6 +13,8 @@ export default defineConfig({
       common: "#313131",
       primary: "#49AD09",
       secondary: "#F2F2F2",
+      white: "#fff",
+      transparent: "transparent"
     },
   },
   plugins: [typography()],

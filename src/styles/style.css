@@ -96,7 +96,7 @@ body h2 {
   @apply text-base hover:text-primary hover:underline;
 }
 .btn {
-  @apply bg-primary hover:bg-secondary hover:text-primary transition duration-200 hover:border-primary text-secondary font-semibold px-6 py-3 border-3 border-primary hover:border-3 rounded-lg mt-8;
+  @apply bg-primary hover:bg-transparent hover:text-primary transition duration-200 hover:border-primary text-secondary font-semibold px-6 py-3 border-3 border-primary hover:border-3 rounded-lg mt-8;
 }
 .portfolio_header {
   @apply justify-between gap-16;
