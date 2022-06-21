@@ -14,7 +14,8 @@ export default defineConfig({
       primary: "#49AD09",
       secondary: "#F2F2F2",
       white: "#fff",
-      transparent: "transparent"
+      transparent: "transparent",
+      dbco: "#E5E5E5"
     },
   },
   plugins: [typography()],
