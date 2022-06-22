@@ -7,11 +7,15 @@
       <use xlink:href="#x_round"></use>
     </svg>
   </button>
-  <ul class="flex-col z-10 flex space-x-0 justify-center absolute right-0 bg-secondary mt-0" x-show="open" x-transition>
-    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/index.html">Home page</a></li>
-    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/pages/about.html">About</a></li>
-    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="/pages/some.html">Smile</a></li>
-    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="#!">Contacts</a></li>
-    <li class="px-4 hover:text-primary border-2 rounded-2xl"><a href="#!">Impacts</a></li>
+  <ul
+    class="flex-col z-10 flex justify-center absolute right-0 bg-secondary w-screen h-screen px-4 text-center gap-y-10"
+    x-show="open"
+    x-transition
+  >
+    <li class="min-h-12 hover:text-primary border-2 rounded-2xl"><a href="/index.html" class="block py-4 min-h-12">Home page</a></li>
+    <li class="min-h-12 hover:text-primary border-2 rounded-2xl"><a href="/pages/about.html" class="block py-4 min-h-12">About</a></li>
+    <li class="min-h-12 hover:text-primary border-2 rounded-2xl"><a href="/pages/some.html" class="block py-4 min-h-12">Smile</a></li>
+    <li class="min-h-12 hover:text-primary border-2 rounded-2xl"><a href="#!" class="block py-4 min-h-12">Contacts</a></li>
+    <li class="min-h-12 hover:text-primary border-2 rounded-2xl"><a href="#!" class="block py-4 min-h-12">Impacts</a></li>
   </ul>
 </nav>
