@@ -59,7 +59,7 @@ body h2 {
   @apply w-10 h-10;
 }
 .hero {
-  @apply flex justify-between items-center h-70vh bg-secondary px-4 top-10vh;
+  @apply flex justify-between items-center h-70vh bg-secondary px-4;
 }
 .hero_text {
   font-family: Inter, sans-serif;
