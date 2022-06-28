@@ -31,6 +31,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,12 +42,6 @@ body {
 
 *::selection {
   @apply bg-primary text-secondary;
-}
-body h1 {
-  @apply text-green-500;
-}
-body h2 {
-  @apply text-blue-400;
 }
 
 #app {
