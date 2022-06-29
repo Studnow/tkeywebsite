@@ -1,5 +1,5 @@
 import './fn.js'
-import "./google.js"
+// import "./google.js"
 import "virtual:windi.css";
 import '../styles/style.css'
 
