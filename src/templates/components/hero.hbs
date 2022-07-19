@@ -10,17 +10,20 @@
     </div>
   </div>
   <div class="hero_text">
-    <h1 class="lg:pl-8 xl:pl-0 text-center text-primary text-4xl md:text-5xl xl:text-7xl xl:max-w-2xl flex flex-col"><span class="text-common">
+    <h1 class="lg:pl-8 xl:pl-0 text-center text-primary text-2xl xs:text-4xl md:text-5xl xl:text-7xl xl:max-w-2xl flex flex-col"><span class="text-common">
         Разработка
       </span>
-      интернет сайтов
+      web сайтов
       {{!-- <span class="text-common">
         под ключ
       </span> --}}
       </h1>
     <h2 class="md:max-w-sm lg:max-w-md text-center md:text-xl lg:text-2xl mt-4">Рассказывайте о Вашей работе и находите новых клиентов</h2>
     <p class="hero_text__description">  </p>
-    <button class="btn">Заказать сайт</button>
+    <section class="flex flex-wrap p-4 h-full items-center" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+      <button class="btn" @click="showModal = true">Заказать сайт</button>
+      {{>modal}}
+    </section>
   </div>
   <div class="hero_right-img">
     <div class="decor">

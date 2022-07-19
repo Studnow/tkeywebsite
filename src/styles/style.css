@@ -79,10 +79,10 @@ body {
   @apply mt-8 max-w-screen-lg grid lg:grid-cols-2 grid-rows-2 justify-items-center gap-8;
 }
 .screen_cards__card {
-  @apply p-8 font-base border border-secondary rounded-lg hover:shadow-2xl transition flex flex-col justify-between;
+  @apply p-4 sm:p-8 border border-secondary rounded-lg hover:shadow-2xl transition flex flex-col justify-between;
 }
 .screen_cards__card-header {
-  @apply flex gap-4 items-center;
+  @apply flex gap-4 items-center flex-wrap;
 }
 .screen_cards__card-text {
   @apply my-6;
@@ -95,4 +95,8 @@ body {
 }
 .portfolio_header {
   @apply justify-between gap-16;
+}
+
+[x-cloak] {
+  display: none;
 }
