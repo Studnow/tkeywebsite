@@ -79,7 +79,7 @@ body {
   @apply mt-8 max-w-screen-lg grid lg:grid-cols-2 grid-rows-2 justify-items-center gap-8;
 }
 .screen_cards__card {
-  @apply p-4 sm:p-8 border border-secondary rounded-lg hover:shadow-2xl transition flex flex-col justify-between;
+  @apply p-4 sm:p-8 border border-secondary rounded-lg hover:shadow-2xl transition flex flex-col justify-between w-full;
 }
 .screen_cards__card-header {
   @apply flex gap-4 items-center flex-wrap;
@@ -94,7 +94,11 @@ body {
   @apply bg-primary hover:bg-transparent hover:text-primary transition duration-200 hover:border-primary text-secondary font-semibold px-6 py-3 border-3 border-primary hover:border-3 rounded-lg;
 }
 .portfolio_header {
-  @apply justify-between gap-16;
+  @apply justify-between gap-16 mt-4;
+}
+
+.service_icon {
+  @apply w-16 h-16 fill-primary;
 }
 
 [x-cloak] {

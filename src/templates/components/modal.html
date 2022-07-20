@@ -18,14 +18,14 @@
 				<p class="text-xl font-normal">чтобы получить бриф для</p>
 				<p class="text-xl font-normal">составления технического задания</p>
 				<p class="text-xl font-normal">на разработку сайта</p>
-        <form netlify class="flex flex-col gap-4 w-1/2 justify-center mx-auto my-4">
+        <form id="contact" name="contact" @submit.prevent="" netlify class="flex flex-col gap-4 w-1/2 justify-center mx-auto my-4">
           <input type="text" name="First Name" id="first-name" placeholder="Ваше имя" class="border border-primary rounded-md px-2 py-1">
           <input type="email" name="email" id="email" placeholder="Ваш email" class="border border-primary rounded-md px-2 py-1">
         </form>
 
 				<!--Footer-->
 				<div class="flex justify-end pt-2">
-					<button class="btn" @click="alert('Additional Action');">Отправить</button>
+					<button form="contact" class="btn" type="submit">Отправить</button>
 				</div>
 
 
