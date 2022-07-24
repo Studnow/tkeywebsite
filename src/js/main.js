@@ -8,7 +8,7 @@ import "@kingshott/iodine";
 
 window.Alpine = Alpine;
 
-Alpine.data("orderForm", validator);
+Alpine.data("contactForm", validator);
 // Alpine.data("servicesForm", validator);
 
 // console.log(validator)
@@ -42,7 +42,6 @@ function validator() {
         rules: ["required", "email"],
         validate(callback) {
           let { isValid, errorMsg } = callback(this);
-          console.log(errorMsg);
           this.isValid = isValid;
           this.errorMsg = errorMsg;
         },
@@ -64,14 +63,23 @@ function validator() {
     submit() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById("heroForm");
-      let formData = new FormData(myForm);
+      let formData = new URLSearchParams(new FormData(myForm)).toString();
+      console.log(formData)
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: formData,
       })
         // This is how we route to /thanks on successful form submission
         // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
+        .then((response) => {
+          if (response.ok) {
+            myForm.reset();
+            console.log("form reset")
+          } else {
+            throw new Error(`Something went wrong: ${response.statusText}`)
+          }
+        })
         .then(() => console.log("thanks"))
         .catch((error) => alert(error));
       return this.isFormValid;

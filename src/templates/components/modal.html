@@ -18,7 +18,8 @@
 				<p class="text-xl font-normal">чтобы получить бриф для</p>
 				<p class="text-xl font-normal">составления технического задания</p>
 				<p class="text-xl font-normal">на разработку сайта</p> -->
-        <form id="{{formId}}" name="{{formId}}" netlify class="flex flex-col gap-4 w-1/2 items-center my-4" @submit.prevent="submit" x-data="orderForm" action="" novalidate>
+        <form id="{{formId}}" name="{{formId}}" method="POST" netlify data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" class="flex flex-col gap-4 w-1/2 items-center my-4" @submit.prevent="submit" x-data="contactForm" action="" novalidate>
+					<input type="hidden" name="form-name" value="{{formId}}">
 					<label for="username">Ваше имя</label>
           <input type="text" name="username" id="username" placeholder="Ваше имя" class="border border-primary rounded-md px-2 py-1" required aria-label="Имя" x-model="fields.name.value" @blur="fields.name.validate(validationCallback)">
 					<p class="text-error text-xs py-2" x-cloak>
