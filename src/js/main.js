@@ -63,14 +63,16 @@ function validator() {
     },
     submit() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
+      let myForm = document.getElementById("heroForm");
+      let formData = new FormData(myForm);
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        // body: new URLSearchParams(this.createFormDataObj(data)).toString(),
+        body: new URLSearchParams(formData).toString(),
       })
         // This is how we route to /thanks on successful form submission
         // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
-        // .then(() => this.$router.push("thanks"))
+        .then(() => console.log("thanks"))
         .catch((error) => alert(error));
       return this.isFormValid;
     },
