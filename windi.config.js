@@ -15,7 +15,9 @@ export default defineConfig({
       secondary: "#F2F2F2",
       white: "#fff",
       transparent: "transparent",
-      dbco: "#E5E5E5"
+      dbco: "#E5E5E5",
+      brands: "#A1A89D",
+      error: "#f5454d",
     },
   },
   plugins: [typography()],

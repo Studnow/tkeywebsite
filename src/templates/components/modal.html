@@ -1,10 +1,10 @@
 		<!--Overlay-->
 		<div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal" :class="{ 'fixed inset-0 z-10 flex items-center justify-center': showModal }" x-transition:leave="ease-in duration-300">
 			<!--Dialog-->
-			<div class="absolute top-[30%] bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-4 text-left px-6" x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+			<div class="absolute top-[30%] bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-4 text-left px-6 flex flex-col items-center" x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
 
 				<!--Title-->
-				<div class="flex justify-between items-center pb-3">
+				<div class="flex justify-between items-center pb-3 w-full">
 					<p class="text-2xl font-bold text-primary">Заказать сайт</p>
 					<div class="cursor-pointer z-50" @click="showModal = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
@@ -14,19 +14,28 @@
 				</div>
 
 				<!-- content -->
-				<p class="text-xl font-normal">Введите Ваше имя и email в эту форму</p>
+				<!-- <p class="text-xl font-normal">Введите Ваше имя и email в эту форму</p>
 				<p class="text-xl font-normal">чтобы получить бриф для</p>
 				<p class="text-xl font-normal">составления технического задания</p>
-				<p class="text-xl font-normal">на разработку сайта</p>
-        <form id="contact" name="contact" netlify class="flex flex-col gap-4 w-1/2 justify-center mx-auto my-4">
-          <input type="text" name="First Name" id="first-name" placeholder="Ваше имя" class="border border-primary rounded-md px-2 py-1">
-          <input type="email" name="email" id="email" placeholder="Ваш email" class="border border-primary rounded-md px-2 py-1">
+				<p class="text-xl font-normal">на разработку сайта</p> -->
+        <form id="{{formId}}" name="{{formId}}" netlify class="flex flex-col gap-4 w-1/2 items-center my-4" @submit.prevent="submit" x-data="orderForm" action="" novalidate>
+					<label for="username">Ваше имя</label>
+          <input type="text" name="username" id="username" placeholder="Ваше имя" class="border border-primary rounded-md px-2 py-1" required aria-label="Имя" x-model="fields.name.value" @blur="fields.name.validate(validationCallback)">
+					<p class="text-error text-xs py-2" x-cloak>
+						<span x-text="fields.name.errorMsg"></span>
+					</p>
+					<label for="email">Ваш email</label>
+          <input type="email" name="email" id="email" placeholder="Ваш email" class="border border-primary rounded-md px-2 py-1" required aria-label="Email" x-model="fields.email.value" @blur="fields.email.validate(validationCallback)">
+					<p class="text-error text-xs py-2" x-cloak>
+						<span x-text="fields.email.errorMsg"></span>
+					</p>
+					<!--Footer-->
+					<div class="flex justify-end pt-2">
+						<button form="{{formId}}" class="btn" type="submit">Отправить</button>
+						<span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span>
+					</div>
         </form>
 
-				<!--Footer-->
-				<div class="flex justify-end pt-2">
-					<button form="contact" class="btn" type="submit">Отправить</button>
-				</div>
 
 
 			</div>

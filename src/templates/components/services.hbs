@@ -12,9 +12,8 @@
         </svg>
         <h4 class="text-lg">Разработка</h4>
       </header>
-      <ul class="self-center flex flex-col gap-2">
+      <ul class="self-center flex flex-col gap-2 mt-6">
         <li>HTML/CSS вёрстка</li>
-        <li>JavaScript анимация</li>
         <li>Адаптивные компоненты</li>
         <li>JavaScript функциональность</li>
       </ul>
@@ -28,9 +27,9 @@
         <svg class="icon service_icon w-18 h-18">
           <use xlink:href="#sells_icon"></use>
         </svg>
-        <h4 class="text-lg">Размещение в интернете</h4>
+        <h4 class="text-lg">Размещение в сети</h4>
       </header>
-      <ul class="self-center flex flex-col gap-2">
+      <ul class="self-center flex flex-col gap-2 mt-6">
         <li>Развёртывание на хостинге</li>
         <li>Подключение CMS</li>
         <li>Настройка рекламы</li>
@@ -46,18 +45,18 @@
         <svg class="icon service_icon">
           <use xlink:href="#hands_icon"></use>
         </svg>
-        <h4 class="text-lg">Лояльных клиентов</h4>
+        <h4 class="text-lg">Наполнение сайта</h4>
       </header>
-      <ul class="list-disc ml-24">
-        <li>Быстрая загрузка сайта</li>
-        <li>Уникальное предложение услуги/товара</li>
-        <li>Удобная навигация по странице</li>
-        <li>Простая отправка формы заказа</li>
+      <ul class="self-center flex flex-col gap-2 mt-6">
+        <li>Семантическое ядро</li>
+        <li>Заголовки</li>
+        <li>Уникальное предложение</li>
+        <li>Подбор тематических изображений</li>
       </ul>
       {{! <p class="screen_cards__card-text">С этими характеристиками пользователи будут возвращаться снова.</p> }}
       {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
     </div>
-    <div class="screen_cards__card">
+    <!-- <div class="screen_cards__card">
       <header class="screen_cards__card-header">
         {{!-- <img src="/img/icons/flag_icon.svg" loading="lazy" width="48" height="48" alt="pic" class="w-12 h-12" /> --}}
         <svg class="icon service_icon stroke-primary">
@@ -72,7 +71,10 @@
       </ul>
       <p class="screen_cards__card-text">Размещение сайта на облачном хостинге.</p>
       {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
-    </div>
+    </div> -->
   </div>
-  <button class="btn" aria-label="Узнать цену">Узнать цену</button>
+  <section class="flex flex-wrap p-4 h-full items-center" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+      <button class="btn" type="button" @click="showModal = true" aria-label="Узнать цену">Узнать цену</button>
+      {{!-- {{>modal formId="servicesForm"}} --}}
+  </section>
 </section>

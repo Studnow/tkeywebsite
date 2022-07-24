@@ -1,0 +1,37 @@
+<form
+  id="contact"
+  name="contact"
+  netlify
+  class="flex flex-col gap-4 w-1/2 justify-center mx-auto my-4"
+  @submit="submit"
+  x-data="contact"
+  action=""
+  novalidate
+>
+  <label for="username">Ваше имя</label>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    placeholder="Ваше имя"
+    class="border border-primary rounded-md px-2 py-1"
+    required
+    aria-label="Имя"
+  />
+  <p class="text-error text-xs py-2" x-cloak>
+    <span></span>
+  </p>
+  <label for="email">Ваш email</label>
+  <input
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Ваш email"
+    class="border border-primary rounded-md px-2 py-1"
+    required
+    aria-label="Email"
+  />
+  <p class="text-error text-xs py-2" x-cloak>
+    <span></span>
+  </p>
+</form>

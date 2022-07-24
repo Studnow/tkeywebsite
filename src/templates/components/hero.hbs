@@ -21,8 +21,8 @@
     <h2 class="md:max-w-sm lg:max-w-md text-center md:text-xl lg:text-2xl mt-4">Рассказывайте о Вашей работе и находите новых клиентов</h2>
     <p class="hero_text__description">  </p>
     <section class="flex flex-wrap p-4 h-full items-center" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
-      <button class="btn" @click="showModal = true">Заказать сайт</button>
-      {{>modal}}
+      <button class="btn" @click="showModal = true" type="button">Заказать сайт</button>
+      {{>modal formId="heroForm"}}
     </section>
   </div>
   <div class="hero_right-img">
