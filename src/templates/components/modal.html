@@ -38,7 +38,7 @@
 
     <!-- content -->
 
-    <form name="contact" method="POST" data-netlify="true">
+    <form id="contact" name="contact" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit">
 			<input type="hidden" name="form-name" value="contact">
       <p>
         <label>Your Name: <input type="text" name="name" /></label>

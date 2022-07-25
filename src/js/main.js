@@ -8,7 +8,7 @@ import "@kingshott/iodine";
 
 window.Alpine = Alpine;
 
-// Alpine.data("contactForm", validator);
+Alpine.data("contactForm", form);
 // Alpine.data("servicesForm", validator);
 
 // console.log(validator)
@@ -91,11 +91,14 @@ Alpine.start();
 //   };
 // }
 
-document.querySelector("form").addEventListener("submit", handleSubmit);
+// document.querySelector("form").addEventListener("submit", handleSubmit);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  let myForm = document.getElementById("pizzaOrder");
+function form () {
+  return {
+    handleSubmit(e) {
+  // e.preventDefault();
+  let myForm = document.getElementById("contact");
+  console.log(myForm)
   let formData = new FormData(myForm);
   fetch("/", {
     method: "POST",
@@ -104,4 +107,6 @@ const handleSubmit = (e) => {
   })
     .then(() => console.log("Form successfully submitted"))
     .catch((error) => alert(error));
-};
+}
+  }
+}
