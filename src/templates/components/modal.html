@@ -43,7 +43,7 @@
 				<p class="text-xl font-normal">на разработку сайта</p> -->
     <form
       hidden
-      name="contact"
+      name="{{formId}}"
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
@@ -51,13 +51,10 @@
     >
       <label><input type="text" name="name" /></label>
       <label> <input type="email" name="email" /></label>
-      <label><textarea name="message"></textarea></label>
+			<div data-netlify-recaptcha="true"></div>
     </form>
     <form
       id="{{formId}}"
-      name="{{formId}}"
-      method="POST"
-      data-netlify="true"
       class="flex flex-col gap-4 w-1/2 items-center my-4"
       @submit.prevent="submit"
       x-data="contactForm"

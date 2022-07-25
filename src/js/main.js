@@ -81,7 +81,7 @@ function validator() {
               throw new Error(`Something went wrong: ${response.statusText}`)
             }
           })
-          .then(() => console.log("Form submitted"))
+          // .then(() => console.log("Form submitted"))
           .catch((error) => alert(error));
       }else {
         console.log("Form is not valid")
