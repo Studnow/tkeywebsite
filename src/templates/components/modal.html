@@ -37,11 +37,25 @@
     </div>
 
     <!-- content -->
+
+    <form name="contact" method="POST" data-netlify="true">
+			<input type="hidden" name="form-name" value="contact">
+      <p>
+        <label>Your Name: <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Your Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+
     <!-- <p class="text-xl font-normal">Введите Ваше имя и email в эту форму</p>
 				<p class="text-xl font-normal">чтобы получить бриф для</p>
 				<p class="text-xl font-normal">составления технического задания</p>
 				<p class="text-xl font-normal">на разработку сайта</p> -->
-    <form
+    <!-- <form
       hidden
       name="{{formId}}"
       method="POST"
@@ -59,7 +73,7 @@
       class="flex flex-col gap-4 w-1/2 items-center my-4"
       @submit.prevent="submit"
       x-data="contactForm"
-      action=""
+      action="/success"
       novalidate
 			netlify
     >
@@ -93,13 +107,13 @@
       />
       <p class="text-error text-xs py-2" x-cloak>
         <span x-text="fields.email.errorMsg"></span>
-      </p>
-      <!--Footer-->
-      <div class="flex justify-end pt-2">
+      </p>-->
+    <!--Footer-->
+    <!-- <div class="flex justify-end pt-2">
         <button form="{{formId}}" class="btn" type="submit">Отправить</button>
-        <!-- <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span> -->
+        <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span>
       </div>
-    </form>
+    </form> -->
   </div>
   <!--/Dialog -->
 </div>
