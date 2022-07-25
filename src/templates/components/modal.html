@@ -45,7 +45,7 @@
       hidden
       name="{{formId}}"
       method="POST"
-      data-netlify="true"
+      netlify
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
     >
@@ -61,6 +61,7 @@
       x-data="contactForm"
       action=""
       novalidate
+			netlify
     >
       <input type="hidden" name="form-name" value="{{formId}}" />
       <label for="username">Ваше имя</label>
