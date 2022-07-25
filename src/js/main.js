@@ -96,7 +96,7 @@ Alpine.start();
 function form () {
   return {
     handleSubmit(e) {
-  let myForm = document.getElementById("heroform");
+  let myForm = document.getElementById("contact");
   console.log(myForm)
   let formData = new FormData(myForm);
   fetch("/", {
