@@ -64,24 +64,29 @@ function validator() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById("heroForm");
       let formData = new URLSearchParams(new FormData(myForm)).toString();
-      console.log(formData)
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData,
-      })
-        // This is how we route to /thanks on successful form submission
-        // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
-        .then((response) => {
-          if (response.ok) {
-            myForm.reset();
-            console.log("form reset")
-          } else {
-            throw new Error(`Something went wrong: ${response.statusText}`)
-          }
+      console.log(formData);
+      if (this.isFormValid) {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData,
         })
-        .then(() => console.log("thanks"))
-        .catch((error) => alert(error));
+          // This is how we route to /thanks on successful form submission
+          // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
+          // .then((response) => {
+          //   if (response.ok) {
+          //     myForm.reset();
+          //     console.log("form reset")
+          //   } else {
+          //     throw new Error(`Something went wrong: ${response.statusText}`)
+          //   }
+          // })
+          .then(() => console.log("Form submitted"))
+          .then(() => console.log("thanks"))
+          .catch((error) => alert(error));
+      }else {
+        console.log("Form is not valid")
+      }
       return this.isFormValid;
     },
   };
