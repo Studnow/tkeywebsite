@@ -38,13 +38,13 @@
 
     <!-- content -->
 
-    <form id="{{formId}}" name="{{formId}}" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit">
-			<input type="hidden" name="form-name" value="contact">
+    <form action="" id="{{formId}}" name="{{formId}}" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit" class="flex flex-col gap-4 w-1/2 items-center my-4">
+			<input type="hidden" name="form-name" value="{{formId}}">
       <p>
-        <label>Your Name: <input type="text" name="name" /></label>
+        <label>Your Name: <input type="text" name="name" class="border border-primary rounded-md px-2 py-1" placeholder="Ваше имя" required /></label>
       </p>
       <p>
-        <label>Your Email: <input type="email" name="email" /></label>
+        <label>Your Email: <input type="email" name="email" class="border border-primary rounded-md px-2 py-1" placeholder="Ваше email" required /></label>
       </p>
       <p>
         <button type="submit">Send</button>
