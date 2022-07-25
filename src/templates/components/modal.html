@@ -39,7 +39,7 @@
     <!-- content -->
 
     <form id="{{formId}}" name="{{formId}}" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit">
-			<input type="hidden" name="form-name" value="contact">
+			<input type="hidden" name="form-name" value="{{formId}}">
       <p>
         <label>Your Name: <input type="text" name="name" /></label>
       </p>
