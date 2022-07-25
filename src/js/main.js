@@ -73,16 +73,15 @@ function validator() {
         })
           // This is how we route to /thanks on successful form submission
           // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
-          // .then((response) => {
-          //   if (response.ok) {
-          //     myForm.reset();
-          //     console.log("form reset")
-          //   } else {
-          //     throw new Error(`Something went wrong: ${response.statusText}`)
-          //   }
-          // })
+          .then((response) => {
+            if (response.ok) {
+              myForm.reset();
+              console.log("form reset")
+            } else {
+              throw new Error(`Something went wrong: ${response.statusText}`)
+            }
+          })
           .then(() => console.log("Form submitted"))
-          .then(() => console.log("thanks"))
           .catch((error) => alert(error));
       }else {
         console.log("Form is not valid")
