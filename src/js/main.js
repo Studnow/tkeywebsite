@@ -97,7 +97,7 @@ function form () {
   return {
     handleSubmit(e) {
   // e.preventDefault();
-  let myForm = document.getElementById("contact");
+  let myForm = document.getElementById("heroForm");
   console.log(myForm)
   let formData = new FormData(myForm);
   fetch("/", {
