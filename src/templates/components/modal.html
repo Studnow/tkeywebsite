@@ -38,27 +38,16 @@
 
     <!-- content -->
 
-    <form
-      id="{{formId}}"
-      name="{{formId}}"
-      x-ref="form"
-      method="POST"
-      data-netlify="true"
-      x-data="contactForm"
-      @submit.prevent="handleSubmit"
-      netlify-honeypot="bot-field"
-    >
-      <p class="hidden">
-        <input name="bot-field" />
+    <form id="{{formId}}" name="{{formId}}" x-ref="form" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit" class="flex flex-col gap-4 w-1/2 items-center my-4" novalidate>
+			<input type="hidden" name="form-name" value="contact">
+      <p>
+        <label>Введите имя: <input type="text" name="name" class="border border-primary rounded-md px-2 py-1" /></label>
       </p>
       <p>
-        <label>Your Name: <input type="text" name="name" /></label>
+        <label>Введите Email: <input type="email" name="email" class="border border-primary rounded-md px-2 py-1" /></label>
       </p>
       <p>
-        <label>Your Email: <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
+        <button type="submit" class="btn">Send</button>
       </p>
     </form>
 
