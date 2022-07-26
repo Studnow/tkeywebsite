@@ -38,18 +38,18 @@
 
     <!-- content -->
 
-    <form id="{{formId}}" name="{{formId}}" x-ref="form" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit" class="flex flex-col gap-4 w-1/2 items-center my-4" novalidate>
+    <!-- <form id="{{formId}}" name="{{formId}}" x-ref="form" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit" class="flex flex-col gap-4 w-1/2 items-center my-4" novalidate>
 			<input type="hidden" name="form-name" value="contact">
       <p>
-        <label>Введите имя: <input type="text" name="name" class="border border-primary rounded-md px-2 py-1" /></label>
+        <label>Введите имя: <input type="text" name="name" class="border border-primary rounded-md px-2 py-1" placeholder="Ваше имя" aria-label="Имя"/></label>
       </p>
       <p>
-        <label>Введите Email: <input type="email" name="email" class="border border-primary rounded-md px-2 py-1" /></label>
+        <label>Введите Email: <input type="email" name="email" class="border border-primary rounded-md px-2 py-1" placeholder="Ваш email" aria-label="email"/></label>
       </p>
       <p>
         <button type="submit" class="btn">Send</button>
       </p>
-    </form>
+    </form> -->
 
     <!-- <p class="text-xl font-normal">Введите Ваше имя и email в эту форму</p>
 				<p class="text-xl font-normal">чтобы получить бриф для</p>
@@ -66,18 +66,19 @@
       <label><input type="text" name="name" /></label>
       <label> <input type="email" name="email" /></label>
 			<div data-netlify-recaptcha="true"></div>
-    </form>
+    </form> -->
     <form
       id="{{formId}}"
+			name="{{formId}}"
 			method="POST"
       class="flex flex-col gap-4 w-1/2 items-center my-4"
       @submit.prevent="submit"
       x-data="contactForm"
-      action="/success"
+			x-ref="form"
       novalidate
 			netlify
     >
-      <input type="hidden" name="form-name" value="{{formId}}" />
+      <input type="hidden" name="form-name" value="contact" />
       <label for="username">Ваше имя</label>
       <input
         type="text"
@@ -107,13 +108,13 @@
       />
       <p class="text-error text-xs py-2" x-cloak>
         <span x-text="fields.email.errorMsg"></span>
-      </p>-->
+      </p>
     <!--Footer-->
-    <!-- <div class="flex justify-end pt-2">
+    <div class="flex justify-end pt-2">
         <button form="{{formId}}" class="btn" type="submit">Отправить</button>
         <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span>
       </div>
-    </form> -->
+    </form>
   </div>
   <!--/Dialog -->
 </div>
