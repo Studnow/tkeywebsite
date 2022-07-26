@@ -93,19 +93,25 @@ Alpine.start();
 
 // document.querySelector("form").addEventListener("submit", handleSubmit);
 
-function form () {
+function form() {
   return {
+    fields: {
+      formIds: {
+        hero: "heroForm",
+        services: "servicesForm"
+      }
+    },
     handleSubmit(e) {
-  let myForm = document.getElementById("heroForm");
-  console.log(myForm)
-  let formData = new FormData(myForm);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-}
-  }
+      let myForm = document.getElementById(this.$refs.form.attributes.id.value);
+      // console.log(this.$refs.form.attributes.id);
+      let formData = new FormData(myForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+    },
+  };
 }
