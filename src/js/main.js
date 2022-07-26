@@ -96,10 +96,7 @@ Alpine.start();
 function form() {
   return {
     fields: {
-      formIds: {
-        hero: "heroForm",
-        services: "servicesForm"
-      }
+      
     },
     handleSubmit(e) {
       let myForm = document.getElementById(this.$refs.form.attributes.id.value);

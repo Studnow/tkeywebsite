@@ -38,8 +38,19 @@
 
     <!-- content -->
 
-    <form id="{{formId}}" name="{{formId}}" x-ref="form" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit">
-			<input type="hidden" name="form-name" value="contact">
+    <form
+      id="{{formId}}"
+      name="{{formId}}"
+      x-ref="form"
+      method="POST"
+      data-netlify="true"
+      x-data="contactForm"
+      @submit.prevent="handleSubmit"
+      netlify-honeypot="bot-field"
+    >
+      <p class="hidden">
+        <input name="bot-field" />
+      </p>
       <p>
         <label>Your Name: <input type="text" name="name" /></label>
       </p>
