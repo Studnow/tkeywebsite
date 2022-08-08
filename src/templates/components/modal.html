@@ -37,24 +37,7 @@
     </div>
 
     <!-- content -->
-
-    <!-- <form id="{{formId}}" name="{{formId}}" x-ref="form" method="POST" data-netlify="true" x-data="contactForm" @submit.prevent="handleSubmit" class="flex flex-col gap-4 w-1/2 items-center my-4" novalidate>
-			<input type="hidden" name="form-name" value="contact">
-      <p>
-        <label>Введите имя: <input type="text" name="name" class="border border-primary rounded-md px-2 py-1" placeholder="Ваше имя" aria-label="Имя"/></label>
-      </p>
-      <p>
-        <label>Введите Email: <input type="email" name="email" class="border border-primary rounded-md px-2 py-1" placeholder="Ваш email" aria-label="email"/></label>
-      </p>
-      <p>
-        <button type="submit" class="btn">Send</button>
-      </p>
-    </form> -->
-
-    <!-- <p class="text-xl font-normal">Введите Ваше имя и email в эту форму</p>
-				<p class="text-xl font-normal">чтобы получить бриф для</p>
-				<p class="text-xl font-normal">составления технического задания</p>
-				<p class="text-xl font-normal">на разработку сайта</p> -->
+		
     <!-- <form
       hidden
       name="{{formId}}"
@@ -103,6 +86,7 @@
         aria-label="Email"
         x-model="fields.email.value"
         @blur="fields.email.validate(validationCallback)"
+				@keyup.enter="fields.email.validate(validationCallback)"
       />
       <p class="text-error text-xs py-2" x-cloak>
         <span x-text="fields.email.errorMsg"></span>
@@ -110,7 +94,7 @@
     <!--Footer-->
     <div class="flex justify-end pt-2">
         <button form="{{formId}}" class="btn" type="submit">Отправить</button>
-        <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span>
+        <!-- <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span> -->
       </div>
     </form>
   </div>

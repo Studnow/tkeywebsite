@@ -86,7 +86,7 @@ function validator() {
       }else {
         console.log("Form is not valid")
       }
-      return this.isFormValid;
+      // return this.isFormValid;
     },
   };
 }
