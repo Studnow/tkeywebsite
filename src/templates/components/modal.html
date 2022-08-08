@@ -55,9 +55,9 @@
 			name="{{formId}}"
 			method="POST"
       class="flex flex-col gap-4 w-1/2 items-center my-4"
-      @submit.prevent="submit"
       x-data="contactForm"
 			x-ref="form"
+      @submit.prevent="submit"
       novalidate
 			netlify
     >
@@ -93,7 +93,7 @@
       </p>
     <!--Footer-->
     <div class="flex justify-end pt-2">
-        <button form="{{formId}}" class="btn" type="submit">Отправить</button>
+        <button form="{{formId}}" class="btn" type="submit" @keyup.enter="submit">Отправить</button>
         <!-- <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span> -->
       </div>
     </form>
