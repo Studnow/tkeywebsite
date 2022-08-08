@@ -49,7 +49,7 @@ function validator() {
         errorMsg: null,
       },
     },
-    isFormValid: true,
+    // isFormValid: true,
     validationCallback(field) {
       Iodine.setErrorMessage("required", "Это обязательное поле");
       Iodine.setErrorMessage("minLength", "Имя должно содержать '[PARAM]' или больше буквы");
@@ -61,11 +61,10 @@ function validator() {
       return { isValid, errorMsg };
     },
     submit() {
-      this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
+      // this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById(this.$refs.form.attributes.id.value);
       let formData = new URLSearchParams(new FormData(myForm)).toString();
       console.log(formData);
-      if (this.isFormValid) {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -83,11 +82,7 @@ function validator() {
           })
           // .then(() => console.log("Form submitted"))
           .catch((error) => alert(error));
-      }else {
-        console.log("Form is not valid")
       }
-      // return this.isFormValid;
-    },
   };
 }
 
