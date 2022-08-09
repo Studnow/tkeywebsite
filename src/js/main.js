@@ -69,6 +69,7 @@ function validator() {
             if (response.ok) {
               myForm.reset();
               // console.log("form reset");
+              this.isFormValid = false;
               this.formMessage = "Форма успешно отправлена";
             } else {
               throw new Error(`Something went wrong: ${response.statusText}`);
