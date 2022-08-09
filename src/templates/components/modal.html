@@ -2,8 +2,6 @@
 <div
   class="overflow-auto"
   style="background-color: rgba(0, 0, 0, 0.5)"
-  x-show="showModal"
-  x-trap.inert="showModal"
   :class="{ 'fixed inset-0 z-10 flex items-center justify-center': showModal }"
   x-transition:leave="ease-in duration-300"
 >
@@ -11,6 +9,7 @@
   <div
     class="absolute top-[30%] bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-4 text-left px-6 flex flex-col items-center"
     x-show="showModal"
+    x-trap.inert="showModal"
     @click.away="showModal = false"
     x-transition:enter="ease-out duration-300"
     x-transition:enter-start="opacity-0 scale-90"
@@ -62,6 +61,7 @@
       novalidate
 			netlify
       @keydown.enter="$focus.next()"
+      action="success"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label for="username">Ваше имя</label>
@@ -97,7 +97,8 @@
       <button form="{{formId}}" class="btn" type="submit" >Отправить</button>
     <!--Footer-->
     <div class="flex justify-end pt-2">
-        <!-- <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span> -->
+        <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span>
+        <span class="text-primary text-xs py-2" x-text="formMessage">Форма успешно отправлена</span>
       </div>
     </form>
   </div>
