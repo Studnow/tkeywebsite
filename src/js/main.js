@@ -55,13 +55,13 @@ function validator() {
       return { isValid, errorMsg };
     },
     resetFields() {
-      this.fields.value = null, this.fields.isValid = null, this.fields.errorMsg = null;
+      this.fields.value = null, this.fields.isValid = false, this.fields.errorMsg = null;
     },
     submit() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById(this.$refs.form.attributes.id.value);
       let formData = new URLSearchParams(new FormData(myForm)).toString();
-      if (this.isFormValid || null) {
+      if (this.isFormValid) {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
