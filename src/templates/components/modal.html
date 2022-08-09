@@ -62,6 +62,7 @@
 			netlify
       @keydown.enter="$focus.next()"
       action="success"
+      x-show="formSent ? '' : 'hidden'"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label for="username">Ваше имя</label>

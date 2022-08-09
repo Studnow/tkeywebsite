@@ -24,6 +24,9 @@
       <button class="btn" @click="showModal = true" type="button">Заказать сайт</button>
       {{>modal formId="heroForm"}}
     </section>
+    <section class="flex flex-wrap p-4 h-full items-center" x-data="{ 'showThank': false }" @keydown.escape="showThank = false" x-cloak>
+      {{>thank}}
+    </section>
   </div>
   <div class="hero_right-img">
     <div class="decor">
