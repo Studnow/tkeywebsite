@@ -54,6 +54,9 @@ function validator() {
 
       return { isValid, errorMsg };
     },
+    resetFields() {
+      !Object.values(this.fields).some((field) => field.value = null, field.isValid = null, field.errorMsg = null);
+    },
     submit() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById(this.$refs.form.attributes.id.value);
@@ -72,6 +75,7 @@ function validator() {
               // console.log("form reset");
               this.formMessage = "Форма успешно отправлена";
               this.formSent = true;
+              this.resetFields();
             } else {
               this.formMessage = "Форма заполнена с ошибками";
               this.formSent = false;
