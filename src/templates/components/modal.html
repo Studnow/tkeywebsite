@@ -3,6 +3,7 @@
   class="overflow-auto"
   style="background-color: rgba(0, 0, 0, 0.5)"
   x-show="showModal"
+  x-trap.inert="showModal"
   :class="{ 'fixed inset-0 z-10 flex items-center justify-center': showModal }"
   x-transition:leave="ease-in duration-300"
 >
@@ -60,12 +61,14 @@
       @submit.prevent="submit"
       novalidate
 			netlify
+      @keydown.enter="$focus.next()"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label for="username">Ваше имя</label>
       <input
         type="text"
         name="name"
+        id="name"
         placeholder="Ваше имя"
         class="border border-primary rounded-md px-2 py-1"
         required
@@ -80,20 +83,20 @@
       <input
         type="email"
         name="email"
+        id="mail"
         placeholder="Ваш email"
         class="border border-primary rounded-md px-2 py-1"
         required
         aria-label="Email"
         x-model="fields.email.value"
         @blur="fields.email.validate(validationCallback)"
-				@keyup.enter="fields.email.validate(validationCallback)"
       />
       <p class="text-error text-xs py-2" x-cloak>
         <span x-text="fields.email.errorMsg"></span>
       </p>
+      <button form="{{formId}}" class="btn" type="submit" >Отправить</button>
     <!--Footer-->
     <div class="flex justify-end pt-2">
-        <button form="{{formId}}" class="btn" type="submit" @keyup.enter="submit">Отправить</button>
         <!-- <span class="text-error text-xs py-2" x-show="!isFormValid">Form is not valid</span> -->
       </div>
     </form>

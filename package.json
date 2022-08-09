@@ -14,6 +14,7 @@
     "windicss": "^3.5.4"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.10.3",
     "@kingshott/iodine": "^8.1.0",
     "alpinejs": "^3.10.2"
   }

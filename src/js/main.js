@@ -4,24 +4,16 @@ import "../styles/style.css";
 
 import Alpine from "alpinejs";
 import "@kingshott/iodine";
-// import validator from "./validator";
+import focus from '@alpinejs/focus'
+
 
 window.Alpine = Alpine;
 
+Alpine.plugin(focus)
 Alpine.data("contactForm", validator);
-// Alpine.data("servicesForm", validator);
-
-// console.log(validator)
 
 Alpine.start();
 
-// let mail = document.getElementById("heroForm").elements;
-// let inputs = document.querySelectorAll("input");
-
-// let validMail = Iodine.assertEmail(mail, ["required", "email"]);
-// Iodine.assertString(2, ['required', 'string'])
-
-// console.log(getContact);
 
 function validator() {
   return {
@@ -64,7 +56,6 @@ function validator() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
       let myForm = document.getElementById(this.$refs.form.attributes.id.value);
       let formData = new URLSearchParams(new FormData(myForm)).toString();
-      console.log(formData);
       if (this.isFormValid) {
         fetch("/", {
           method: "POST",
@@ -76,39 +67,17 @@ function validator() {
           .then((response) => {
             if (response.ok) {
               myForm.reset();
-              console.log("form reset")
+              console.log("form reset");
             } else {
-              throw new Error(`Something went wrong: ${response.statusText}`)
+              throw new Error(`Something went wrong: ${response.statusText}`);
             }
           })
           // .then(() => console.log("Form submitted"))
           .catch((error) => alert(error));
-      }else {
-        console.log("Form is not valid")
+      } else {
+        console.log("Form is not valid");
       }
       // return this.isFormValid;
     },
   };
 }
-
-// document.querySelector("form").addEventListener("submit", handleSubmit);
-
-// function form() {
-//   return {
-//     fields: {
-      
-//     },
-//     handleSubmit(e) {
-//       let myForm = document.getElementById(this.$refs.form.attributes.id.value);
-//       // console.log(this.$refs.form.attributes.id);
-//       let formData = new FormData(myForm);
-//       fetch("/", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//         body: new URLSearchParams(formData).toString(),
-//       })
-//         .then(() => console.log("Form successfully submitted"))
-//         .catch((error) => alert(error));
-//     },
-//   };
-// }
