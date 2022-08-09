@@ -43,7 +43,6 @@ function validator() {
     },
     isFormValid: false,
     formMessage: "",
-    formSent: false,
     validationCallback(field) {
       Iodine.setErrorMessage("required", "Это обязательное поле");
       Iodine.setErrorMessage("minLength", "Имя должно содержать '[PARAM]' или больше буквы");
@@ -67,18 +66,14 @@ function validator() {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: formData,
         })
-          // This is how we route to /thanks on successful form submission
-          // More on $router.push function: https://router.vuejs.org/guide/essentials/navigation.html
           .then((response) => {
             if (response.ok) {
               myForm.reset();
               // console.log("form reset");
               this.formMessage = "Форма успешно отправлена";
-              this.formSent = true;
               this.resetFields();
             } else {
               this.formMessage = "Форма заполнена с ошибками";
-              this.formSent = false;
               throw new Error(`Something went wrong: ${response.statusText}`);
             }
           })
@@ -87,7 +82,6 @@ function validator() {
       } else {
         console.log("Form is not valid");
       }
-      // return this.isFormValid;
     },
   };
 }

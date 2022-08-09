@@ -62,7 +62,6 @@
 			netlify
       @keydown.enter="$focus.next()"
       action="success"
-      x-show="formSent ? '' : 'hidden'"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label for="username">Ваше имя</label>
@@ -98,7 +97,7 @@
       <button form="{{formId}}" class="btn" type="submit" >Отправить</button>
     <!--Footer-->
     <div class="flex justify-end pt-2">
-        <span class="text-xs py-2 text-center" :class="formSent ? 'text-primary' : 'text-error'" x-text="formMessage">Form is not valid</span>
+        <span class="text-xs py-2 text-center text-error" x-text="formMessage">Form is not valid</span>
         <!-- <span class="text-primary text-xs py-2" x-text="formMessage">Форма успешно отправлена</span> -->
       </div>
     </form>
