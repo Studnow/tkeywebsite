@@ -41,8 +41,9 @@ function validator() {
         errorMsg: null,
       },
     },
-    isFormValid: true,
+    isFormValid: false,
     formMessage: "",
+    formSent: null,
     validationCallback(field) {
       Iodine.setErrorMessage("required", "Это обязательное поле");
       Iodine.setErrorMessage("minLength", "Имя должно содержать '[PARAM]' или больше буквы");
@@ -69,9 +70,11 @@ function validator() {
             if (response.ok) {
               myForm.reset();
               // console.log("form reset");
-              this.isFormValid = false;
               this.formMessage = "Форма успешно отправлена";
+              this.formSent = true;
             } else {
+              this.formMessage = "Форма заполнена с ошибками";
+              this.formSent = false;
               throw new Error(`Something went wrong: ${response.statusText}`);
             }
           })
