@@ -55,7 +55,7 @@ function validator() {
       return { isValid, errorMsg };
     },
     resetFields() {
-      !Object.values(this.fields).some((field) => field.value = null, field.isValid = null, field.errorMsg = null);
+      this.fields.value = null, this.fields.isValid = null, this.fields.errorMsg = null;
     },
     submit() {
       this.isFormValid = !Object.values(this.fields).some((field) => !field.isValid);
