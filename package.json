@@ -1,0 +1,21 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "pug": "^3.0.2",
+    "vite": "^2.3.7",
+    "vite-plugin-handlebars": "^1.5.1",
+    "vite-plugin-pug": "^0.3.0",
+    "vite-plugin-windicss": "^1.0.3",
+    "windicss": "^3.5.4"
+  },
+  "dependencies": {
+    "@alpinejs/focus": "^3.10.3",
+    "@kingshott/iodine": "^8.1.0",
+    "alpinejs": "^3.10.2"
+  }
+}

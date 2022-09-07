@@ -1,0 +1,80 @@
+<section class="screen">
+  <header class="screen_header">
+    <span class="text-md">Что я делаю</span>
+    <h2 class="mt-8 text-common text-5xl font-medium">Услуги</h2>
+  </header>
+  <div class="screen_cards">
+    <div class="screen_cards__card flex">
+      <header class="screen_cards__card-header">
+        {{! <img src="/img/icons/bank_icon.svg" loading="lazy" width="48" height="48" alt="pic" class="w-12 h-12" /> }}
+        <svg class="icon service_icon">
+          <use xlink:href="#bank_icon"></use>
+        </svg>
+        <h4 class="text-lg">Разработка</h4>
+      </header>
+      <ul class="self-center flex flex-col gap-2 mt-6">
+        <li>HTML/CSS вёрстка</li>
+        <li>Адаптивные компоненты</li>
+        <li>JavaScript функциональность</li>
+      </ul>
+      {{!-- <p class="screen_cards__card-text">Вместо оплаты работы дизайнера, менеджера и остальных сотрудников малой или
+        средней студии - платите только разработчику.</p> --}}
+      {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
+    </div>
+    <div class="screen_cards__card">
+      <header class="screen_cards__card-header">
+        {{! <img src="/img/icons/hands_icon.svg" loading="lazy" width="48" height="48" alt="pic" class="w-12 h-12" /> }}
+        <svg class="icon service_icon w-18 h-18">
+          <use xlink:href="#sells_icon"></use>
+        </svg>
+        <h4 class="text-lg">Размещение в сети</h4>
+      </header>
+      <ul class="self-center flex flex-col gap-2 mt-6">
+        <li>Развёртывание на хостинге</li>
+        <li>Подключение CMS</li>
+        <li>Настройка рекламы</li>
+        <li>Подключение аналитики</li>
+      </ul>
+      {{!-- <p class="screen_cards__card-text">Благодаря быстрой загрузке сайта пользователь может быстрее ознакомиться с
+        предоставляемыми услугами, а значит и заказать их.</p> --}}
+      {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
+    </div>
+    <div class="screen_cards__card">
+      <header class="screen_cards__card-header">
+        {{! <img src="/img/icons/face_icon.svg" loading="lazy" width="48" height="48" alt="pic" class="w-12 h-12" /> }}
+        <svg class="icon service_icon">
+          <use xlink:href="#hands_icon"></use>
+        </svg>
+        <h4 class="text-lg">Наполнение сайта</h4>
+      </header>
+      <ul class="self-center flex flex-col gap-2 mt-6">
+        <li>Семантическое ядро</li>
+        <li>Заголовки</li>
+        <li>Уникальное предложение</li>
+        <li>Подбор тематических изображений</li>
+      </ul>
+      {{! <p class="screen_cards__card-text">С этими характеристиками пользователи будут возвращаться снова.</p> }}
+      {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
+    </div>
+    <!-- <div class="screen_cards__card">
+      <header class="screen_cards__card-header">
+        {{!-- <img src="/img/icons/flag_icon.svg" loading="lazy" width="48" height="48" alt="pic" class="w-12 h-12" /> --}}
+        <svg class="icon service_icon stroke-primary">
+          <use xlink:href="#speed_icon"></use>
+        </svg>
+        <h4 class="text-lg">Скорость</h4>
+      </header>
+      <ul class="list-disc ml-24">
+        <li>Бесплатный хостинг</li>
+        <li>Дешёвый домен</li>
+        <li>Простая CMS</li>
+      </ul>
+      <p class="screen_cards__card-text">Размещение сайта на облачном хостинге.</p>
+      {{! <a href="#" class="screen_cards__card-link">Читать далее</a> }}
+    </div> -->
+  </div>
+  <section class="flex flex-wrap p-4 h-full items-center" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+      <button class="btn" type="button" @click="showModal = true" aria-label="Узнать цену">Узнать цену</button>
+      {{>modal formId="servicesForm"}}
+  </section>
+</section>

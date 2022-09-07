@@ -1,0 +1,107 @@
+<!--Overlay-->
+<div
+  class="overflow-auto"
+  style="background-color: rgba(0, 0, 0, 0.5)"
+  :class="{ 'fixed inset-0 z-10 flex items-center justify-center': showModal }"
+  x-transition:leave="ease-in duration-300"
+>
+  <!--Dialog-->
+  <div
+    class="absolute top-[30%] bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-4 text-left px-6 flex flex-col items-center"
+    x-show="showModal"
+    x-trap.inert="showModal"
+    @click.away="showModal = false"
+    x-transition:enter="ease-out duration-300"
+    x-transition:enter-start="opacity-0 scale-90"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="ease-in duration-300"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-90"
+  >
+    <!--Title-->
+    <div class="flex justify-between items-center pb-3 w-full">
+      <p class="text-2xl font-bold text-primary">Заказать сайт</p>
+      <div class="cursor-pointer z-50" @click="showModal = false">
+        <svg
+          class="fill-current text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+        >
+          <path
+            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- content -->
+		
+    <!-- <form
+      hidden
+      name="{{formId}}"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
+    >
+      <label><input type="text" name="name" /></label>
+      <label> <input type="email" name="email" /></label>
+			<div data-netlify-recaptcha="true"></div>
+    </form> -->
+    <form
+      id="{{formId}}"
+			name="{{formId}}"
+			method="POST"
+      class="flex flex-col gap-4 w-1/2 items-center my-4"
+      x-data="contactForm"
+			x-ref="form"
+      @submit.prevent="submit"
+      novalidate
+			netlify
+      @keydown.enter="$focus.next()"
+      action="success"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <label for="username">Ваше имя</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Ваше имя"
+        class="border border-primary rounded-md px-2 py-1"
+        required
+        aria-label="Имя"
+        x-model="fields.name.value"
+        @blur="fields.name.validate(validationCallback)"
+      />
+      <p class="text-error text-xs py-2" x-cloak>
+        <span x-text="fields.name.errorMsg"></span>
+      </p>
+      <label for="email">Ваш email</label>
+      <input
+        type="email"
+        name="email"
+        id="mail"
+        placeholder="Ваш email"
+        class="border border-primary rounded-md px-2 py-1"
+        required
+        aria-label="Email"
+        x-model="fields.email.value"
+        @blur="fields.email.validate(validationCallback)"
+      />
+      <p class="text-error text-xs py-2" x-cloak>
+        <span x-text="fields.email.errorMsg"></span>
+      </p>
+      <button form="{{formId}}" class="btn" type="submit" >Отправить</button>
+    <!--Footer-->
+    <div class="flex justify-end pt-2">
+        <span class="text-xs py-2 text-center text-error" x-text="formMessage">Form is not valid</span>
+        <!-- <span class="text-primary text-xs py-2" x-text="formMessage">Форма успешно отправлена</span> -->
+      </div>
+    </form>
+  </div>
+  <!--/Dialog -->
+</div>
+<!-- /Overlay -->
